@@ -17,7 +17,7 @@ function Login()
                     <input type='password' placeholder='Password'/>
                  </div>
                  <div className='buttons'>
-                 <button type='submit'>Login</button>
+                 <button type='button'>Login</button>
                  <button type='button' onClick={()=>window.location.href="/Register"}>Register</button>
                  </div>
                 
