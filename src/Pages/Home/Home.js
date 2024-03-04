@@ -1,6 +1,9 @@
 import Header from '../../Components/Header/Header';
 import './Home.css';
 import poster1 from '../../Assets/poster1.jpg';
+import poster2 from '../../Assets/poster2.jpg';
+import poster3 from '../../Assets/poster3.jpg';
+
 import ImageGallery from '../../Components/ImageGallery/ImageGallery';
 
 import book1 from '../../Assets/book1.jpg';
@@ -17,13 +20,35 @@ import school4 from '../../Assets/school4.jpg';
 import school5 from '../../Assets/school5.jpg';
 import school6 from '../../Assets/school6.jpeg';
 import Footer from '../../Components/Footer/Footer.js';
+import { useEffect, useState } from 'react';
 
 function Home()
 {
+  const poster = [poster1, poster2, poster3];
+  const lengthPoster = poster.length;
+  let i = 0;
+  let posterSwitch=poster1;
+  
+  const [posterImg,setImagePoster]=useState(poster1);
+  useEffect(() => {
+    const intervalId = setInterval(sliding, 3000);
+    
+    // Clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, [i]);
+  
+  const sliding = () => {
+    // Update i for sliding through posters
+    i++;
+    if(i>lengthPoster-1)
+     i=0;
+     setImagePoster(poster[i]);
+  };
+
   return (
     <div className='HomeContainer'>
        <Header/>
-       <img src={poster1} width="100%" height="100%"/>
+       <img src={posterImg} width="100%" height="100%"/>
        <ImageGallery img1={{img:book1,textOne:"New Arrivals",textTwo:"Rs250"}}
         img2={{img:book2,textOne:"Being Hindu",textTwo:"Rs220"}}
         img3={{img:book3,textOne:"Shesh Kitna Tamas",textTwo:"Rs210"}}

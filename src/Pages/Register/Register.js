@@ -1,26 +1,29 @@
 import Footer from '../../Components/Footer/Footer.js';
 import Header from '../../Components/Header/Header.js';
-import './Login.css';
+import './Register.css';
 
-function Login()
+function Register()
 {
     return (
         <div className='LoginContainer'>
            <Header/>
            <div className='LoginForm'>
-              <h4>LOGIN</h4>
-              <hr/>
-              <div className='Form'>
+              <h4>REGISTER</h4>
+              <hr style={{marginTop:"30px"}}/>
+              <div className='Form' style={{height:"250px"}}>
                  <h3>FILL IN THE DETAILS</h3>
                  <div className='textBoxes'>
+                    <input type='name' placeholder='Name'/>
                     <input type='email' placeholder='Email'/>
+                 </div>
+                 <div className='textBoxes'>
                     <input type='password' placeholder='Password'/>
+                    <input type='text' placeholder='Confirm Password'/>
                  </div>
                  <div className='buttons'>
+                 <button type='submit'>Register</button>
                  <button type='submit'>Login</button>
-                 <button type='button' onClick={()=>window.location.href="/Register"}>Register</button>
                  </div>
-                
               </div>
            </div>
            <Footer/>
@@ -28,4 +31,4 @@ function Login()
     );
 }
 
-export default Login;
+export default Register;
