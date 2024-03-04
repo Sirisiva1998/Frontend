@@ -18,7 +18,7 @@ function Header()
             </div>
              <div class="NavigationHeader">
                 <img src={homeIcon} width='30' height='30'onClick={()=>window.location.href="/"}/>
-                <div className='hoverButton'><h5>BestSellers</h5></div>
+                <div className='hoverButton' onClick={()=>window.location.href="/BestSeller"}><h5>BestSellers</h5></div>
                 <div className='hoverButton'><h5>New Arrivals</h5></div>
                 <div className='hoverButton'><h5>Pre Orders</h5></div>
                 <div className='hoverButton'><h5>Children & Young Adult</h5></div>

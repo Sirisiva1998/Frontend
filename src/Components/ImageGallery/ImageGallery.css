@@ -93,3 +93,29 @@
     color: #FF571E;
     margin-top:-10px;
 }
+.cartFeature
+{
+    background-color:#ff561e4a;
+    width:100%;
+    height:40px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scaleY(0.0);
+    transform-origin:bottom;
+}
+.ImageWithText:hover
+{
+    .cartFeature
+    {
+        transform: scaleY(1.0);
+        transition: transform 0.5s ease-in-out;
+    }
+}
+
+.cartFeature h4
+{
+    color: white;
+    font-weight:500;
+}
