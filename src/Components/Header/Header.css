@@ -17,7 +17,7 @@
 }
 .SearchBar
 {
-    width:700px;
+    width:60%;
     height:35px;
     display: flex;
     justify-content: flex-start;
@@ -85,3 +85,69 @@
     background-color: #FF571E;
 }
 
+
+.NavSubHeader
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height:100%;
+}
+.NavSubHeaderTwo
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height:100%;
+}
+
+
+.menuHeader
+{
+    filter: invert(100);
+}
+@media (max-width: 480px) {
+    .HeaderContainer
+    {
+        height:250px;
+    }
+   
+    .menuHeader
+    {
+        position: absolute;
+        top:20px;
+        left:10px;
+    }
+    .HeaderContainer .SearchNavHeader {
+        flex-direction: column;
+    }
+    .NavigationHeader
+    {
+        display: flex;
+        justify-content: center;
+        flex-direction:column;
+        align-items: center;
+        height:25%;
+    }
+    .NavigationHeader  .NavSubHeader
+    {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height:50%;
+        width:100%;
+    }
+    
+    .NavigationHeader .NavSubHeaderTwo
+    {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height:50%;
+        width:100%;
+    }
+    .NavigationHeader h5
+    {
+        font-size:8px;
+    }
+}
