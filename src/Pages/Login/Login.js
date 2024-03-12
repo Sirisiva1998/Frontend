@@ -1,9 +1,40 @@
+import { useState } from 'react';
+import { LoginUser } from '../../Api/Login.js';
 import Footer from '../../Components/Footer/Footer.js';
 import Header from '../../Components/Header/Header.js';
 import './Login.css';
+import { useNavigate } from 'react-router-dom';
 
 function Login()
 {
+   const navigate=useNavigate();
+   const [email, setEmail]= useState("");
+   const [password, setPassword]= useState("");
+
+   const submitData=()=>{
+           let form={
+            "email": email,
+            "password":password
+           };
+
+           LoginUser(form).then(e=>
+            {
+               console.log('data',e);
+               if(e.login)
+                {
+                  localStorage.setItem("username",e.user);
+                  localStorage.setItem("login","Logout");
+                  navigate('/')
+                }
+                else
+                {
+                  alert(e.message);
+                  localStorage.setItem("login","Login");
+                  navigate('/Register')
+                }
+            }).catch(err=>console.log(err));
+   }
+
     return (
         <div className='LoginContainer'>
            <Header/>
@@ -13,11 +44,11 @@ function Login()
               <div className='Form'>
                  <h3>FILL IN THE DETAILS</h3>
                  <div className='textBoxes'>
-                    <input type='email' placeholder='Email'/>
-                    <input type='password' placeholder='Password'/>
+                    <input type='email' placeholder='Email' onChange={(e)=>setEmail(e.target.value)}/>
+                    <input type='password' placeholder='Password' onChange={(e)=>setPassword(e.target.value)}/>
                  </div>
                  <div className='buttons'>
-                 <button type='button'>Login</button>
+                 <button type='button' onClick={()=>submitData()}>Login</button>
                  <button type='button' onClick={()=>window.location.href="/Register"}>Register</button>
                  </div>
                 
