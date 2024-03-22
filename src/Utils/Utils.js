@@ -1,3 +1,3 @@
-const url="http://localhost:2500";
+const url="https://backendnodejs-5t1x.onrender.com";
 
 export default url;
