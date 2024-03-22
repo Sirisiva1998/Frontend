@@ -1,7 +1,7 @@
 import axios from 'axios';
 import url from '../Utils/Utils.js';
 
-const endPoint="removeCookies";
+const endPoint="removecookies";
 
 async function logoutButton()
 {
@@ -10,21 +10,18 @@ async function logoutButton()
         const response=await axios.get(`${url}/${endPoint}`,{headers:{'Content-Type':'application/json'},withCredentials:true});
         if(response.data.cookie)
          { 
-            localStorage.setItem("username","");
-            localStorage.setItem("login","Login");
+            localStorage.setItem("login","false");
             console.log("if",response.data.cookie);
-
          }
         else
           {
-            localStorage.setItem("username","");
-            localStorage.setItem("login","Login");
+            localStorage.setItem("login","false");
             console.log(response.data.cookie);
           }
     }
      catch(err)
      {
-        throw new err;
+        throw  err;
      }
 }
 

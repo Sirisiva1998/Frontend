@@ -13,18 +13,20 @@ function Header()
     const [loginButton,setLoginButton]=useState("Login");
 
     useEffect(()=>{
-       setLoginButton(localStorage.getItem("login")=="false"?"Login":"Logout");
+       setLoginButton(localStorage.getItem("login")==="false"?"Login":"Logout");
        console.log(localStorage.getItem("username"));
     },[loginButton]);
 
     
     const loginCheck=()=>{
-        if(localStorage.getItem("username")==="")
+        if(localStorage.getItem("login")==="false")
            {
+            setLoginButton(localStorage.getItem("login")==="false"?"Login":"Logout");
             navigate("/Login");
            }
            else
            {
+            setLoginButton(localStorage.getItem("login")==="false"?"Login":"Logout");
             logoutButton().then(e=>{alert("Logout Successfull!")
             window.location.reload();
             })
