@@ -13,7 +13,7 @@ function Header()
     const [loginButton,setLoginButton]=useState("Login");
 
     useEffect(()=>{
-       setLoginButton(localStorage.getItem("login"));
+       setLoginButton(localStorage.getItem("login")=="false"?"Login":"Logout");
        console.log(localStorage.getItem("username"));
     },[loginButton]);
 

@@ -3,6 +3,8 @@ import Footer from '../../Components/Footer/Footer.js';
 import Header from '../../Components/Header/Header.js';
 import './Register.css';
 import url from '../../Utils/Utils.js';
+import { registerUser } from '../../Api/Login.js';
+
 
 
 function Register()
