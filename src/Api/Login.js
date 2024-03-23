@@ -10,7 +10,7 @@ async function LoginUser(userData)
         if(response.data.login)
           return response.data;
         else
-          return "Login unsuccessfull!";
+          return false;
     }
      catch(err)
      {

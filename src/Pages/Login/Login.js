@@ -22,15 +22,16 @@ function Login()
                console.log('data',e);
                if(e.login)
                 {
-                  localStorage.setItem("username",e.user);
-                  localStorage.setItem("login","Logout");
+                  alert("Login successfull");
+                  localStorage.setItem("login","true");
                   navigate('/')
                 }
                 else
                 {
-                  alert(e.message);
-                  localStorage.setItem("login","Login");
-                  navigate('/Register')
+
+                  alert("Login Unsuccessful");
+                  localStorage.setItem("login","false");
+                  navigate('/Login')
                 }
             }).catch(err=>console.log(err));
    }
